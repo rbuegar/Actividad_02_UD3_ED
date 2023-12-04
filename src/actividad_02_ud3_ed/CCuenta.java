@@ -7,7 +7,7 @@ package actividad_02_ud3_ed;
 
 /**
  * 
- * @author Ana
+ * @author Roberto
  */
 public class CCuenta {
 
@@ -25,9 +25,9 @@ public class CCuenta {
    /**
     * 
     * @param nom Nombre del titular de la cuenta
-    * @param cue
-    * @param sal
-    * @param tipo 
+    * @param cue Numero de la cuenta
+    * @param sal Saldo dsiponible
+    * @param tipo Tipo de interes
     */
     public CCuenta (String nom, String cue, double sal, double tipo)
     {
@@ -56,7 +56,11 @@ public class CCuenta {
         return saldo;
     }
 
-    
+    /**
+     * 
+     * @param cantidad Cantidad que se quiere ingresar
+     * @throws Exception Si se intenta ingresar dinero negativo salta excepcion
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0){
@@ -64,7 +68,12 @@ public class CCuenta {
         setSaldo(saldo + cantidad);
     }
 
-   
+   /**
+    * 
+    * @param cantidad Cantidad que queremos retirar
+    * @throws Exception Si se intenta retirar dinero negativo salta excepcion
+    * @throws Exception Si no hay suficiente saldo salta excepcion
+    */
     public void retirar (double cantidad) throws Exception
     {
         if (cantidad < 0){
